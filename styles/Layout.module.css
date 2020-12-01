@@ -1,0 +1,54 @@
+.layout {
+  width: 100vw;
+  height: 100vh;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 56px;
+  background-color: #202020;
+  padding: 5px 16px;
+}
+
+.header * {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+}
+.menu-button {
+  padding: 8px;
+  margin-right: 16px;
+}
+.header button {
+  color: white;
+}
+.header img {
+  width: 97px;
+  height: 20px;
+}
+
+.center input {
+  
+}
+
+.sidebar,
+.content {
+  vertical-align: top;
+}
+
+.sidebar {
+  display: inline-block;
+  width: 240px;
+  height: calc(100% - 56px);
+  background-color: #212121;
+}
+
+.content {
+  display: inline-block;
+  background-color: #181818;
+  width: calc(100% - 240px);
+  height: calc(100% - 56px);
+  padding: 26px 20px;
+}
