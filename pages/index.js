@@ -34,7 +34,7 @@ export default function Home() {
 
           <div className="info">
             <a>
-              <img src="" />
+              <img className="video-thumbnail" src="./test_thumbnail.png" />
             </a>
             <div className="text">
               <h4> INTERVIEW | JOSE MOURINHO ON CHELSEA DRAW | Tottenham Tottenham Tottenham Tottenham </h4>
