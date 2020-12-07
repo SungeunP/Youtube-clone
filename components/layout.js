@@ -5,6 +5,12 @@ import KeyboardSharpIcon from '@material-ui/icons/KeyboardSharp'
 import VideoCallIcon from '@material-ui/icons/VideoCall'
 import AppsIcon from '@material-ui/icons/Apps'
 import NotificationsIcon from '@material-ui/icons/Notifications'
+import HomeIcon from '@material-ui/icons/Home'
+import Whatshot from '@material-ui/icons/Whatshot'
+import SubscriptionsIcon from '@material-ui/icons/Subscriptions'
+import YouTubeIcon from '@material-ui/icons/YouTube'
+import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
+import HistoryIcon from '@material-ui/icons/History';
 
 const Layout = ({ children }) => {
   return (
@@ -27,7 +33,7 @@ const Layout = ({ children }) => {
             </button>
           </div>
           <button className="search-btn">
-            <SearchIcon/>
+            <SearchIcon style={{width: 20, height: 20}} />
           </button>
         </div>
 
@@ -47,7 +53,73 @@ const Layout = ({ children }) => {
       </div>
 
       <div className="sidebar">
-        <p> side-bar </p>
+
+        <ul className="menu-list">
+          <li className="menu">
+            <span>
+              <HomeIcon />
+            </span>
+            <p> 홈 </p> 
+          </li>
+          <li className="menu">
+            <span>
+              <Whatshot />
+            </span>
+            <p> 인기 </p>
+          </li>
+          <li className="menu">
+            <span>
+              <SubscriptionsIcon />
+            </span>
+            <p> 구독 </p> 
+          </li>
+          <li className="menu">
+            <span>
+              <YouTubeIcon />
+            </span>
+            <p> Originals </p>
+          </li>
+        </ul>
+
+        <ul className="menu-list">
+          <li className="menu">
+            <span>
+              <VideoLibraryIcon />
+            </span>
+            <p> 보관함 </p> 
+          </li>
+          <li className="menu">
+            <span>
+              <HistoryIcon />
+            </span>
+            <p> 시청 기록 </p>
+          </li>
+          <li className="menu">
+            <span>
+              <SubscriptionsIcon />
+            </span>
+            <p> 내 동영상 </p> 
+          </li>
+          <li className="menu">
+            <span>
+              <YouTubeIcon />
+            </span>
+            <p> 구매 내역 </p>
+          </li>
+          <li className="menu">
+            <span>
+              <YouTubeIcon />
+            </span>
+            <p> 나중에 볼 동영상 </p>
+          </li>
+          <li className="menu">
+            <span>
+              <YouTubeIcon />
+            </span>
+            <p> 더보기 </p>
+          </li>
+        </ul>
+
       </div>
 
       <div className="content">
@@ -107,18 +179,29 @@ const Layout = ({ children }) => {
         .header .center .search .keyboard-btn {
           width: 31px;
           height: 27px;
+          color: #adadad;
           padding: 0px 4px;
           background-color: transparent;
         }
-        .header .center .search .keyboard-btn > svg {
+        .header .center .search-btn {
+          display: flex;
+          justify-content: center;
+          width: 65px;
+          height: 30px;
+          background-color: #313131;
+          color: #6f6f6f;
+          box-sizing: border-box;
         }
-        
+        .header .center .search-btn > svg {
+          width: 20px;
+        }
 
         .header .right .profile-img {
           width: 32px;
           height: 32px;
           border-radius: 50%;
           margin: 0px 8px;
+          cursor: pointer;
         }
 
         .header .right .option-btn {
@@ -138,6 +221,30 @@ const Layout = ({ children }) => {
           background-color: #212121;
         }
 
+        .sidebar .menu-list {
+          list-style-type: none;
+          padding-left: 0;
+          padding-bottom: 12px;
+          border-bottom: 1px solid #383838;
+        }
+        .sidebar .menu-list li {
+          padding: 6px 24px;
+          color: #909090;
+          cursor: pointer;
+        }
+        .sidebar .menu-list li:hover {
+          background-color: #383838;
+        }
+        .sidebar .menu-list li span {
+          margin-right: 24px;
+        }
+        .sidebar .menu-list li p {
+          display: inline-block;
+          color: white;
+          vertical-align: top;
+          /* margin-top: 2px; */
+        }
+        
         .content {
           display: inline-block;
           background-color: #181818;
