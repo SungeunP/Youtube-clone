@@ -210,12 +210,12 @@ const Sidebar = () => {
         .sidebar .menu-title {
           color: grey;
           font-size: 0.9em;
-          margin: 0px 24px;
+          margin: 12px 24px 0px;
         }
         .sidebar .menu-list {
           list-style-type: none;
-          padding-left: 0;
-          padding-bottom: 12px;
+          padding: 12px 0px;
+          margin: 0px;
           border-bottom: 1px solid #383838;
         }
         .sidebar .menu-list li {

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import Link from 'next/link'
+import ContentCard from '../components/contentCard'
 import Layout from '../components/layout'
 
 export default function Home() {
@@ -13,40 +14,10 @@ export default function Home() {
       
       <div className="contents">
 
-        <div className="card">
-          <div className="thumbnail">
-            
-          </div>
-          <div className="video-menu">
-            <ul>
-              <li>
-                <a>
-                  <button></button>
-                </a>
-              </li>
-              <li>
-                <a>
-                  <button></button>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="info">
-            <a>
-              <img className="video-thumbnail" src="./test_thumbnail.png" />
-            </a>
-            <div className="text">
-              <h4> INTERVIEW | JOSE MOURINHO ON CHELSEA DRAW | Tottenham Tottenham Tottenham Tottenham </h4>
-              <p> Tottenham Hotspur </p>
-              <p> 조회수 8.5만회 </p>
-            </div>
-            <div className="menu">
-              
-            </div>
-
-          </div>
-        </div>
+        <ContentCard  />
+        <ContentCard  />
+        <ContentCard  />
+        <ContentCard  />
 
       </div>
     </Layout>
