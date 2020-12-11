@@ -4,7 +4,9 @@ const ContentCard = ({}) => {
     <div className="content-card">
 
       <div className="thumbnail">
-        
+        <a>
+          <img className="video-thumbnail" src="./test_thumbnail.png" />
+        </a>
         <div className="video-menu">
           <ul>
             <li>
@@ -22,18 +24,14 @@ const ContentCard = ({}) => {
       </div>
 
       <div className="info">
-
-        {/* <a>
-          <img className="video-thumbnail" src="./test_thumbnail.png" />
-        </a>
         <div className="text">
-          <h4> INTERVIEW | JOSE MOURINHO ON CHELSEA DRAW | Tottenham Tottenham Tottenham Tottenham </h4>
+          <p className="video-title"> INTERVIEW | JOSE MOURINHO ON CHELSEA DRAW | Tottenham Tottenham Tottenham Tottenham </p>
           <p> Tottenham Hotspur </p>
           <p> 조회수 8.5만회 </p>
         </div>
         <div className="menu">
           
-        </div> */}
+        </div>
 
       </div>
 
@@ -41,13 +39,28 @@ const ContentCard = ({}) => {
         .content-card {
           display: inline-block;
           width: calc(25% - 18px);
-          background-color: yellow;
-          margin-right: 18px;
+          margin: 0px 9px 36px;#
         }
-        .content-card:nth-child(4n) {
-          width: calc(25%);
-          margin-right: 0px;
+        
+        .content-card .thumbnail .video-thumbnail {
+          width: 100%;
         }
+        .content-card .thumbnail .video-menu {
+          display: none;
+        }
+
+        .content-card .info .text .video-title {
+          width: 100%;
+          font-size: 0.9em;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+        .content-card .info .text p:nth-child(n+2) {
+          color: #aaa;
+        }
+        
         `}</style>
     </div>
   )
