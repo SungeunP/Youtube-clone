@@ -209,7 +209,7 @@ const Sidebar = () => {
 
         .sidebar .menu-title {
           color: grey;
-          font-size: 0.9em;
+          font-size: 0.9rem;
           margin: 12px 24px 0px;
         }
         .sidebar .menu-list {

@@ -24,10 +24,13 @@ const ContentCard = ({}) => {
       </div>
 
       <div className="info">
+        <a className="video-profile-img" href="https://google.com">
+          <img src="./profile-img.jpg" />
+        </a> 
         <div className="text">
           <p className="video-title"> INTERVIEW | JOSE MOURINHO ON CHELSEA DRAW | Tottenham Tottenham Tottenham Tottenham </p>
-          <p> Tottenham Hotspur </p>
-          <p> 조회수 8.5만회 </p>
+          <p className="video-channel"> Tottenham Hotspur </p>
+          <p className="video-views"> 조회수 8.5만회 </p>
         </div>
         <div className="menu">
           
@@ -44,21 +47,42 @@ const ContentCard = ({}) => {
         
         .content-card .thumbnail .video-thumbnail {
           width: 100%;
+          margin-bottom: 8px;
         }
         .content-card .thumbnail .video-menu {
           display: none;
         }
 
+        .content-card .info .text {
+          display: inline-block;
+          width: calc(100% - 48px);
+          padding-right: 16px;
+        }
+        .content-card .info .text p:nth-child(n+2) {
+          color: #aaa;
+        }
+
         .content-card .info .text .video-title {
           width: 100%;
-          font-size: 0.9em;
+          font-size: 0.9rem;
           display: -webkit-box;
           overflow: hidden;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 2;
         }
-        .content-card .info .text p:nth-child(n+2) {
-          color: #aaa;
+        .content-card .info .text .video-channel,
+        .content-card .info .text .video-views {
+          font-size: 0.9rem;
+        }
+        .content-card .info .video-profile-img {
+          display: inline-block;
+          vertical-align: top;
+          margin-right: 12px;
+        }
+        .content-card .info .video-profile-img > img {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
         }
         
         `}</style>

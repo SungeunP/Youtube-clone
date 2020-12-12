@@ -102,7 +102,7 @@ const Layout = ({ children }) => {
           border: none;
           /* padding: 0px 8px; */
           color: #727272;
-          font-size: 1em
+          font-size: 1rem;
         }
         .header .center .search .keyboard-btn {
           width: 31px;
