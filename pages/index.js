@@ -5,6 +5,7 @@ import ContentCard from '../components/content/contentCard'
 import ContentDivider from '../components/content/common/contentDivider'
 import News from '../components/content/news'
 import Layout from '../components/layout'
+import Boards from '../components/content/boards'
 
 export default function Home() {
   return (
@@ -26,6 +27,8 @@ export default function Home() {
         <ContentCard />
 
         <News />
+
+        <Boards />
 
       </div>
     </Layout>

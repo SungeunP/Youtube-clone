@@ -142,7 +142,8 @@ const Layout = ({ children }) => {
           background-color: #181818;
           width: calc(100% - 240px);
           height: calc(100% - 56px);
-          padding: 26px 20px;
+          padding: 26px 20px 0px;
+          overflow-y: auto;
         }
 
       `}</style>
