@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
 
         <div className="left">
           <button className="menu-button">
-            <MenuIcon color="white"/>
+            <MenuIcon />
           </button>
           <img className="ytb-logo" src="/yt_logo_rgb_dark.png" />
         </div>
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
         </div>
 
       </div>
-
+      
       <Sidebar />
 
       <div className="content">
@@ -142,8 +142,14 @@ const Layout = ({ children }) => {
           background-color: #181818;
           width: calc(100% - 240px);
           height: calc(100% - 56px);
-          padding: 26px 20px 0px;
+          padding: 26px 20px;
           overflow-y: auto;
+          vertical-align: top;
+        }
+        @media (max-width: 1330px) {
+          .content {
+            width: calc(100% - 72px);
+          }
         }
 
       `}</style>

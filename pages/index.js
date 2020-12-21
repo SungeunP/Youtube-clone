@@ -27,6 +27,11 @@ export default function Home() {
         <ContentCard />
 
         <News />
+        
+        <ContentCard />
+        <ContentCard />
+        <ContentCard />
+        <ContentCard />
 
         <Boards />
 

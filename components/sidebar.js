@@ -194,6 +194,33 @@ const Sidebar = () => {
         </li>
       </ul>
 
+      <div className="yt-infos">
+        <ul className="info-1">
+          <li>
+            <a> 정보 </a>
+          </li>
+          <li>
+            <a> 보도자료 </a>
+          </li>
+          <li>
+            <a> 저작권 </a>
+          </li>
+          <li>
+            <a> 문의하기 </a>
+          </li>
+          <li>
+            <a> 크리에이터 </a>
+          </li>
+          <li>
+            <a> 광고 </a>
+          </li>
+          <li>
+            <a> 개발자 </a>
+          </li>
+        </ul>
+      </div>
+
+
       <style jsx>{`
         .sidebar,
         .content {
@@ -205,6 +232,13 @@ const Sidebar = () => {
           width: 240px;
           height: calc(100% - 56px);
           background-color: #212121;
+          vertical-align: top;
+          overflow-y: auto;
+        }
+        @media (max-width: 1330px) {
+          .sidebar {
+            width: 72px;
+          }
         }
 
         .sidebar .menu-title {
