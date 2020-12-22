@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const ContentCard = ({}) => {
 
   return (
@@ -28,7 +30,9 @@ const ContentCard = ({}) => {
           <img src="./profile-img.jpg" />
         </a> 
         <div className="text">
-          <p className="video-title"> INTERVIEW | JOSE MOURINHO ON CHELSEA DRAW | Tottenham Tottenham Tottenham Tottenham </p>
+          <Link href={'/video'}>
+            <a className="video-title"> INTERVIEW | JOSE MOURINHO ON CHELSEA DRAW | Tottenham Tottenham Tottenham Tottenham </a>
+          </Link> 
           <p className="video-channel"> Tottenham Hotspur </p>
           <p className="video-views"> 조회수 8.5만회 </p>
         </div>

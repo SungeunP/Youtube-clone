@@ -15,8 +15,6 @@ import FlagIcon from '@material-ui/icons/Flag';
 import SettingsIcon from '@material-ui/icons/Settings';
 
 const Sidebar = () => {
-  
-  
 
   return (
     <div className="sidebar">

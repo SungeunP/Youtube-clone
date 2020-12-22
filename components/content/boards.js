@@ -21,6 +21,7 @@ const Boards = ({children}) => {
 
     <style jsx>{`
       .news-content {
+        margin-bottom: 36px;
       }
 
     `}</style>

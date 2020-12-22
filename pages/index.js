@@ -7,7 +7,7 @@ import News from '../components/content/news'
 import Layout from '../components/layout'
 import Boards from '../components/content/boards'
 
-export default function Home() {
+const Video = () => {
   return (
     <Layout>
       <Head>
@@ -39,3 +39,5 @@ export default function Home() {
     </Layout>
   )
 }
+
+export default Video
