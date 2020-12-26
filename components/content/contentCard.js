@@ -1,3 +1,6 @@
+import WatchLaterIcon from '@material-ui/icons/WatchLater';
+import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
+
 import Link from "next/link"
 
 const ContentCard = ({}) => {
@@ -6,34 +9,34 @@ const ContentCard = ({}) => {
     <div className="content-card">
 
       <div className="thumbnail">
-        <a>
-          <img className="video-thumbnail" src="./test_thumbnail.png" />
-        </a>
-        <div className="video-menu">
-          <ul>
-            <li>
-              <a>
-                <button></button>
-              </a>
-            </li>
-            <li>
-              <a>
-                <button></button>
-              </a>
-            </li>
-          </ul>
-        </div>
+        <Link href={'/video'}>
+          <a> <img className="video-thumbnail" src="./test_thumbnail.png" /> </a>
+        </Link>
+        <ul className="video-menu">
+          <li>
+            <button className="video-opt-btn">
+              <WatchLaterIcon />
+            </button>
+          </li>
+          <li>
+            <button className="video-opt-btn">
+              <PlaylistPlayIcon />
+            </button>
+          </li>
+        </ul>
       </div>
 
       <div className="info">
-        <a className="video-profile-img" href="https://google.com">
-          <img src="./profile-img.jpg" />
-        </a> 
+        <Link href={'/channel'}>
+          <a className="video-profile-img"> <img src="./profile-img.jpg" /> </a> 
+        </Link>
         <div className="text">
           <Link href={'/video'}>
             <a className="video-title"> INTERVIEW | JOSE MOURINHO ON CHELSEA DRAW | Tottenham Tottenham Tottenham Tottenham </a>
           </Link> 
-          <p className="video-channel"> Tottenham Hotspur </p>
+          <Link href={'/channel'}>
+            <a className="video-channel"> Tottenham Hotspur </a>
+          </Link>
           <p className="video-views"> 조회수 8.5만회 </p>
         </div>
         <div className="menu">
@@ -50,20 +53,39 @@ const ContentCard = ({}) => {
         }
         
         .content-card .thumbnail .video-thumbnail {
+          position: relative;
           width: 100%;
           margin-bottom: 8px;
         }
         .content-card .thumbnail .video-menu {
-          display: none;
+          position: absolute;
+          top: 88px; /* 82px */
+          right: 35px; /* 29px */
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+        .content-card .thumbnail .video-menu li {
+          margin-bottom: 6px;
+        }
+        .content-card .thumbnail .video-menu li:last-child {
+          margin-bottom: 0px;
+        }
+        .content-card .thumbnail .video-menu .video-opt-btn {
+          width: 30px;
+          height: 30px;
+          background-color: black;
+          color: #fff;
+          border-radius: 4px;
+        }
+        .content-card .thumbnail .video-menu li:last-child .video-opt-btn svg {
+          font-size: 1.7rem;
         }
 
         .content-card .info .text {
           display: inline-block;
           width: calc(100% - 48px);
           padding-right: 16px;
-        }
-        .content-card .info .text p:nth-child(n+2) {
-          color: #aaa;
         }
 
         .content-card .info .text .video-title {
@@ -77,6 +99,10 @@ const ContentCard = ({}) => {
         .content-card .info .text .video-channel,
         .content-card .info .text .video-views {
           font-size: 0.9rem;
+          color: #aaa;
+        }
+        .content-card .info .text .video-channel:hover {
+          color: #fff;
         }
         .content-card .info .video-profile-img {
           display: inline-block;
