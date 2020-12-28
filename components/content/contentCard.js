@@ -10,7 +10,7 @@ const ContentCard = ({}) => {
 
       <div className="thumbnail">
         <Link href={'/video'}>
-          <a> <img className="video-thumbnail" src="./test_thumbnail.png" /> </a>
+          <a><img className="video-thumbnail" src="./test_thumbnail.png" /></a>
         </Link>
         <ul className="video-menu">
           <li>
@@ -99,7 +99,7 @@ const ContentCard = ({}) => {
         .content-card .info .text .video-channel,
         .content-card .info .text .video-views {
           font-size: 0.9rem;
-          color: #aaa;
+          color: #aaa;          
         }
         .content-card .info .text .video-channel:hover {
           color: #fff;
