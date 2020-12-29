@@ -1,14 +1,30 @@
+import classnames from 'classnames'
+
 import WatchLaterIcon from '@material-ui/icons/WatchLater';
 import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 
 import Link from "next/link"
 
-const ContentCard = ({}) => {
+/**
+ * @param {String} type // ver, hor // default: ver
+ */
+const ContentCard = ({type}) => {
+  
+  const isHorizontal = type === 'hor'
+
+  const thumbnail_classname = classnames('thumbnail', {
+    'horizontal': isHorizontal
+  })
+
+  const content_card_classname = classnames('content-card', {
+    'horizontal': isHorizontal
+
+  })
 
   return (
-    <div className="content-card">
+    <div className={content_card_classname}>
 
-      <div className="thumbnail">
+      <div className={thumbnail_classname}>
         <Link href={'/video'}>
           <a><img className="video-thumbnail" src="./test_thumbnail.png" /></a>
         </Link>
@@ -49,7 +65,10 @@ const ContentCard = ({}) => {
         .content-card {
           display: inline-block;
           width: calc(25% - 18px);
-          margin: 0px 9px 36px;#
+          margin: 0px 9px 36px;
+        }
+        .content-card.horizontal {
+          width: 100%;
         }
         
         .content-card .thumbnail .video-thumbnail {

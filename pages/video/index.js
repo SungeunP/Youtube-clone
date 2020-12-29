@@ -8,6 +8,7 @@ import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import ShareIcon from '@material-ui/icons/Share';
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import ContentCard from '../../components/content/contentCard';
 
 const Video = () => {
 
@@ -66,7 +67,7 @@ const Video = () => {
 
         </div>
         <div className="recog-videos">
-          
+          <ContentCard type="hor" />
         </div>
       </div>
 
