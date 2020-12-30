@@ -70,7 +70,15 @@ const ContentCard = ({type}) => {
         .content-card.horizontal {
           width: 100%;
         }
+        .content-card.horizontal > * {
+          display: inline-block;          
+        }
         
+        .content-card.horizontal .thumbnail {
+          position: relative;
+          width: 40%;
+        }
+
         .content-card .thumbnail .video-thumbnail {
           position: relative;
           width: 100%;
@@ -83,6 +91,10 @@ const ContentCard = ({type}) => {
           list-style: none;
           margin: 0;
           padding: 0;
+        }
+        .content-card.horizontal .thumbnail .video-menu {
+          top: 4px;
+          right: 4px;
         }
         .content-card .thumbnail .video-menu li {
           margin-bottom: 6px;
@@ -100,11 +112,22 @@ const ContentCard = ({type}) => {
         .content-card .thumbnail .video-menu li:last-child .video-opt-btn svg {
           font-size: 1.7rem;
         }
+        .content-card.horizontal .thumbnail .video-menu li .video-opt-btn svg {
+          font-size: 0.6em;
+        }
 
+        .content-card.horizontal .info {
+          width: 60%;
+          vertical-align: top;
+        }
         .content-card .info .text {
           display: inline-block;
           width: calc(100% - 48px);
           padding-right: 16px;
+        }
+        .content-card.horizontal .info .text {
+          width: 100%;
+          padding: 0px 16px 0px 8px;
         }
 
         .content-card .info .text .video-title {
@@ -127,6 +150,9 @@ const ContentCard = ({type}) => {
           display: inline-block;
           vertical-align: top;
           margin-right: 12px;
+        }
+        .content-card.horizontal .info .video-profile-img {
+          display: none;
         }
         .content-card .info .video-profile-img > img {
           width: 36px;
