@@ -11,7 +11,7 @@ const Video = () => {
   return (
     <Layout>
       <Head>
-        <title>Hello world</title>
+        <title>Youtube</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       

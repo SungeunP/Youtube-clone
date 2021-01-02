@@ -8,7 +8,10 @@ import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import ShareIcon from '@material-ui/icons/Share';
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
+
 import ContentCard from '../../components/content/contentCard';
+
 
 const Video = () => {
 
@@ -58,7 +61,28 @@ const Video = () => {
           </div>
           
           <div className="channel-info">
-            
+            <div id="channel-profile-img-area">
+              <img src="./profile-img.jpg" className="profile-img" />
+            </div>
+            <div id="channel-info-area">
+              <div className="wrapper">
+                <div>
+                  <span> 이스타TV </span>
+                  <p> 구독자 <span> 35.4만명</span></p>
+                </div>
+                <div>
+                  <button className="channel-pay-sub"> 가입 </button>
+                  <button className="channel-sub"> 구독 </button>
+                  <button className="channel-alert">
+                    <NotificationsOutlinedIcon />
+                  </button>
+                </div>
+              </div>
+
+              <div className="channel-description">
+                
+              </div>
+            </div>
           </div>
           
           <div className="comment">
@@ -66,7 +90,22 @@ const Video = () => {
           </div>
 
         </div>
-        <div className="recog-videos">
+        <div className="recommend-videos">
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
+          <ContentCard type="hor" />
           <ContentCard type="hor" />
         </div>
       </div>
@@ -74,8 +113,8 @@ const Video = () => {
       <style jsx>{`
         .yt-video {
           display: grid;
-          grid-template-columns: calc(70% - 10px) calc(30% - 10px);
-          grid-column-gap: 20px;
+          grid-template-columns: calc(70% - 6px) calc(30% - 6px);
+          grid-column-gap: 12px;
         }
         
         .video-contents {
@@ -118,7 +157,7 @@ const Video = () => {
         .video-contents .video-infos .video-meta .video-actions button span {
         /* .video-contents .video-infos .video-meta .video-actions .video-rate .rate-btns button span { */
           vertical-align: top;
-          line-height: 24px;
+          line-height: 24px; dev
           margin-left: 6px;
           font-weight: bold;
           font-size: 0.9rem;
@@ -127,6 +166,22 @@ const Video = () => {
         .video-contents .video-infos .video-meta .video-actions .action-btn {
           padding: 10px 10px;
           color: #909090;
+        }
+        .video-contents .video-infos .video-meta .video-actions .action-btn span {
+          margin-left: 4px;          
+        }
+
+        /* channel-info */
+        .video-contents .channel-info {
+          display: grid;
+          padding: 18px 0px;
+          grid-template-columns: 48px calc(100% - 60px);
+          grid-column-gap: 12px;
+        }
+        .video-contents .channel-info .profile-img {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
         }
       `}</style>
     </Layout>

@@ -31,7 +31,7 @@ const ContentCard = ({type}) => {
         <ul className="video-menu">
           <li>
             <button className="video-opt-btn">
-              <WatchLaterIcon />
+              <WatchLaterIcon style={{fontSize: 22}} />
             </button>
           </li>
           <li>
@@ -69,14 +69,15 @@ const ContentCard = ({type}) => {
         }
         .content-card.horizontal {
           width: 100%;
+          margin: 0px 0px 4px 0px;
         }
         .content-card.horizontal > * {
-          display: inline-block;          
+          display: inline-block;     
         }
         
         .content-card.horizontal .thumbnail {
           position: relative;
-          width: 40%;
+          width: 170px;
         }
 
         .content-card .thumbnail .video-thumbnail {
@@ -109,15 +110,20 @@ const ContentCard = ({type}) => {
           color: #fff;
           border-radius: 4px;
         }
+        .content-card.horizontal .thumbnail .video-menu .video-opt-btn svg {
+          font-size: 0.4em !important;
+        }
+
         .content-card .thumbnail .video-menu li:last-child .video-opt-btn svg {
           font-size: 1.7rem;
         }
-        .content-card.horizontal .thumbnail .video-menu li .video-opt-btn svg {
-          font-size: 0.6em;
-        }
+        /* .content-card.horizontal .thumbnail .video-menu .video-opt-btn .MuiSvgIcon-root {
+          width: 0.8em;
+          height: 0.8em;
+        } */
 
         .content-card.horizontal .info {
-          width: 60%;
+          width: calc(100% - 170px);
           vertical-align: top;
         }
         .content-card .info .text {
@@ -127,7 +133,7 @@ const ContentCard = ({type}) => {
         }
         .content-card.horizontal .info .text {
           width: 100%;
-          padding: 0px 16px 0px 8px;
+          padding: 0px 0px 0px 8px;
         }
 
         .content-card .info .text .video-title {
