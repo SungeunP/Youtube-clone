@@ -65,10 +65,10 @@ const Video = () => {
               <img src="./profile-img.jpg" className="profile-img" />
             </div>
             <div id="channel-info-area">
-              <div className="wrapper">
+              <div className="title-wrap">
                 <div>
-                  <span> 이스타TV </span>
-                  <p> 구독자 <span> 35.4만명</span></p>
+                  <span className="channel-name"> 이스타TV </span>
+                  <p className="channel-sub-count"> 구독자 <span> 35.4만명</span></p>
                 </div>
                 <div>
                   <button className="channel-pay-sub"> 가입 </button>
@@ -113,7 +113,7 @@ const Video = () => {
       <style jsx>{`
         .yt-video {
           display: grid;
-          grid-template-columns: calc(70% - 6px) calc(30% - 6px);
+          grid-template-columns: calc(100% - 406px) 406px;
           grid-column-gap: 12px;
         }
         
@@ -163,13 +163,8 @@ const Video = () => {
           font-size: 0.9rem;
           /* margin-top: 4px; */
         }
-        .video-contents .video-infos .video-meta .video-actions .action-btn {
-          padding: 10px 10px;
-          color: #909090;
-        }
-        .video-contents .video-infos .video-meta .video-actions .action-btn span {
-          margin-left: 4px;          
-        }
+        /* .video-contents .video-infos .video-meta .video-actions .action-btn { */
+        
 
         /* channel-info */
         .video-contents .channel-info {
@@ -183,6 +178,42 @@ const Video = () => {
           height: 48px;
           border-radius: 50%;
         }
+        .video-contents .channel-info .title-wrap {
+          display: flex;
+          height: 100%;
+          justify-content: space-between;
+        }
+        .video-contents .channel-info .title-wrap > div{
+          height: 100%;
+        }
+        
+        .video-contents .channel-info .title-wrap button {
+          padding: 10px 24px;
+          color: #909090;
+          font-size: 0.9rem;
+          vertical-align: middle;
+          margin-right: 12px;
+          margin-right: 4px;
+        }
+        .video-contents .channel-info .title-wrap button:last-child { margin-right: 0px; }
+
+        .video-contents .channel-info .title-wrap button.channel-sub {
+          background-color: #c00;
+          color: #fff;
+        }
+        .video-contents .channel-info .title-wrap button.channel-pay-sub {
+          border: 1px solid #3ea6ff;
+          color: #3ea6ff;
+          margin-right: 12px;
+        }
+        .video-contents .channel-info .title-wrap button.channel-alert {
+          padding: 10px 10px;
+        }
+
+        .video-contents .channel-info .title-wrap .channel-sub-count {
+          font-size: 0.9rem;
+        }
+
       `}</style>
     </Layout>
   )

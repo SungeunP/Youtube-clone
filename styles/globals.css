@@ -35,6 +35,7 @@ p {
 
 button {
   border: none;
+  border-radius: 2px;
   background-color: transparent;
   padding: 0px;
   cursor: pointer;
@@ -54,4 +55,13 @@ button {
 
 p {
   color: #aaa;
+}
+
+/* action-btn */
+.action-btn {
+  padding: 10px 10px;
+  color: #909090;
+}
+.action-btn span {
+  margin-left: 4px;          
 }
