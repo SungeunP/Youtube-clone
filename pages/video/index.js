@@ -12,7 +12,6 @@ import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined'
 
 import ContentCard from '../../components/content/contentCard';
 
-
 const Video = () => {
 
   return (
@@ -80,13 +79,102 @@ const Video = () => {
               </div>
 
               <div className="channel-description">
+                <p> 2020년 9월 14일 몇 명의 천문학자들이 금성에서 생명체 존재 가능성의 증거를 찾아냈다고 네이처 천문학에 발표했습니다. 이것이 어떤 의미인지 알기 위해 금성의 변화 역사를 들여다봅니다. </p>
+
+                <p> 참고 자료: </p>
+                <p> [1] 금성의 관찰과 탐사 (위키피디아) </p>
+                <a> https://en.wikipedia.org/wiki/Observa... </a>
+
+                <p> 참고 자료: </p>
+                <p> [2] 금성의 표면 온도 (NASA 웹사이트) </p>
+                <a> https://solarsystem.nasa.gov/planets/... </a>
+
+                <p> 참고 자료: </p>
+                <p> [3] 미생물은 대기 중 높은 곳에서 살아남고, 번성할 수도 있다. </p>
+                <a> https://www.sciencemag.org/news/2013/... </a>
+
+                <p> 참고 자료: </p>
+                <p> [4] Phosphine gas in the cloud decks of Venus </p>
+                <a> https://www.nature.com/articles/s4155... </a>
+                <p> Possible Marker of Life Spotted on Venus </p>
+                <a> https://www.almaobservatory.org/en/pr... </a>
+
+                <p> 참고 자료: </p>
+                <p> [5] 지구에서는 산소가 희박한 장소에 서식하는 박테리아에서 포스핀을 생성 </p>
+                <a> https://www.sciencemag.org/news/2020/... </a>
+
+                <p> 참고 자료: </p>
+                <p> [6] 금성의 날씨는 어떨까? </p>
+                <a> https://phys.org/news/2016-12-weather... </a>
+
+                <p> 참고 자료: </p>
+                <p> [7] [과학|기술] 우주인들이 달에 싸놓고 떠난 거, 지금쯤 잘 크고 있을까? </p>
+                <a> https://youtu.be/hp70PP9eFk8 </a>
+
+                <p> 참고 자료: </p>
+                <p> [8] 금성이 우리 태양계에서 첫 번째로 거주 가능한 세계였을까? </p>
+                <a> https://agupubs.onlinelibrary.wiley.c... </a>
+
+                <p> 참고 자료: </p>
+                <p> [9] 금성에 있던 물이 어디로? </p>
+                <a> https://sci.esa.int/web/venus-express... </a>
+
+                <p> 참고 자료: </p>
+                <p> [10] Global resurfacing event </p>
+                <a> https://en.wikipedia.org/wiki/Geology... </a>
                 
+                <p> 참고 자료: </p>
+                <p> [11] 금성의 지질학 </p>
+                <a> https://en.wikipedia.org/wiki/Geology... </a>
+                
+                <p> 참고 자료: </p>
+                <p> [12] 태양이 지구 온난화를 일으키고 있는가? </p>
+                <a> https://climate.nasa.gov/faq/14/is-th... </a>
+                
+                <p> 참고 자료: </p>
+                <p> [13] 화산이 기후변화와 무슨 상관이 있는가? </p>
+                <a> https://climate.nasa.gov/faq/42/what-... </a>
+                
+                <p> 참고 자료: </p>
+                <p> [14] 기후변화의 원인 </p>
+                <a> https://climate.nasa.gov/causes/ </a>
+
+                <p> 참고 자료: </p>
+                <p> [15] 통합시스템으로서의 지구에 관한 연구 </p>
+                <a> https://climate.nasa.gov/nasa_science... </a>
+
+                <p> 참고 자료: </p>
+                <p> [16] 5천500만년전 대형 화산 폭발때보다 바다 산성화 더 빨리 진행 </p>
+                <a> https://www.hankyung.com/society/arti... </a>
+                
+                <p> 참고 자료: </p>
+                <p> [17] 캘리포니아와 오레건, 워싱턴 등 미 서부 10개 주를 휩쓴 산불은 15일까지 모두 460만 에이커(약 1만8600 ㎢)의 면적을 태웠다. </p>
+                <a> https://www.chosun.com/international/... </a>
+
               </div>
+
             </div>
           </div>
           
           <div className="comment">
-
+            <div className="head">
+              <p> 댓글 <span>260</span>개 </p>
+              <button className="align">
+                정렬 기준
+              </button>
+            </div>
+            <div className="my-comment">
+              <div id="comment-left-area">
+                <img src="./profile-img.jpg" className="profile-img md" />
+              </div>              
+              <div id="comment-right-area">
+              </div>              
+            </div>
+            <div className="other-comments">
+              <div className="comment">
+                
+              </div>
+            </div>
           </div>
 
         </div>
@@ -134,7 +222,6 @@ const Video = () => {
         .video-contents .video-infos .video-meta {
           display: flex;
           justify-content: space-between;
-          /* margin-top: 10px; */
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .video-contents .video-infos .video-meta .video-views {
@@ -155,7 +242,6 @@ const Video = () => {
           padding-right: 0px;
         }
         .video-contents .video-infos .video-meta .video-actions button span {
-        /* .video-contents .video-infos .video-meta .video-actions .video-rate .rate-btns button span { */
           vertical-align: top;
           line-height: 24px; dev
           margin-left: 6px;
@@ -163,8 +249,6 @@ const Video = () => {
           font-size: 0.9rem;
           /* margin-top: 4px; */
         }
-        /* .video-contents .video-infos .video-meta .video-actions .action-btn { */
-        
 
         /* channel-info */
         .video-contents .channel-info {
@@ -172,6 +256,7 @@ const Video = () => {
           padding: 18px 0px;
           grid-template-columns: 48px calc(100% - 60px);
           grid-column-gap: 12px;
+          font-size: 0.9em;
         }
         .video-contents .channel-info .profile-img {
           width: 48px;
@@ -180,11 +265,14 @@ const Video = () => {
         }
         .video-contents .channel-info .title-wrap {
           display: flex;
-          height: 100%;
           justify-content: space-between;
+          margin-bottom: 12px;
         }
-        .video-contents .channel-info .title-wrap > div{
-          height: 100%;
+        .video-contents .channel-info .title-wrap > div {
+          height: 48px;
+        }
+        .video-contents .channel-info .title-wrap > div > * { 
+          vertical-align: middle;
         }
         
         .video-contents .channel-info .title-wrap button {
@@ -194,7 +282,7 @@ const Video = () => {
           vertical-align: middle;
           margin-right: 12px;
           margin-right: 4px;
-        }
+        } 
         .video-contents .channel-info .title-wrap button:last-child { margin-right: 0px; }
 
         .video-contents .channel-info .title-wrap button.channel-sub {
@@ -211,7 +299,23 @@ const Video = () => {
         }
 
         .video-contents .channel-info .title-wrap .channel-sub-count {
-          font-size: 0.9rem;
+          font-size: 0.8rem;
+        }
+
+        .video-contents .channel-info .channel-description {
+          height: 6rem;
+          overflow-y: hidden;
+        }
+        .video-contents .channel-info .channel-description.view-all {
+          
+        }
+        .video-contents .channel-info .channel-description p {
+          color: #fff;
+        }
+
+        .video-contents > .comment {
+          padding: 24px 0px;
+          border-top: 1px solid rgba(255,255,255,0.1);
         }
 
       `}</style>
