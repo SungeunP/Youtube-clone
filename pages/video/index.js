@@ -9,8 +9,10 @@ import ShareIcon from '@material-ui/icons/Share';
 import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import NotificationsOutlinedIcon from '@material-ui/icons/NotificationsOutlined';
+import SortIcon from '@material-ui/icons/Sort';
 
 import ContentCard from '../../components/content/contentCard';
+import Comment from '../../components/comment'
 
 const Video = () => {
 
@@ -158,22 +160,25 @@ const Video = () => {
           
           <div className="comment">
             <div className="head">
-              <p> 댓글 <span>260</span>개 </p>
-              <button className="align">
-                정렬 기준
-              </button>
+              <p className="title"> 댓글 <span>260</span>개 </p>
+              <div className="align-btn">
+                <SortIcon /> <p> 정렬 기준 </p>
+              </div>
             </div>
             <div className="my-comment">
               <div id="comment-left-area">
                 <img src="./profile-img.jpg" className="profile-img md" />
               </div>              
               <div id="comment-right-area">
-              </div>              
+                <input className="comment-input" value={''} placeholder={"공개 댓글 추가..."} />
+              </div>
             </div>
             <div className="other-comments">
-              <div className="comment">
-                
-              </div>
+              <Comment />
+              <Comment />
+              <Comment />
+              <Comment />
+              <Comment />
             </div>
           </div>
 
@@ -201,8 +206,8 @@ const Video = () => {
       <style jsx>{`
         .yt-video {
           display: grid;
-          grid-template-columns: calc(100% - 406px) 406px;
-          grid-column-gap: 12px;
+          grid-template-columns: calc(100% - 420px) 400px;
+          grid-column-gap: 20px;
         }
         
         .video-contents {
@@ -282,7 +287,7 @@ const Video = () => {
           vertical-align: middle;
           margin-right: 12px;
           margin-right: 4px;
-        } 
+        }
         .video-contents .channel-info .title-wrap button:last-child { margin-right: 0px; }
 
         .video-contents .channel-info .title-wrap button.channel-sub {
@@ -317,7 +322,44 @@ const Video = () => {
           padding: 24px 0px;
           border-top: 1px solid rgba(255,255,255,0.1);
         }
+        .video-contents .comment .head .title {
+          display: inline-block;
+          color: #fff;
+          vertical-align: top;
+        }
+        .video-contents .comment .head .align-btn {
+          display: inline-block;
+          color: #909090;
+          margin-left: 36px;
+          font-size: 0.9rem;
+          line-height: 0.9rem;
+          vertical-align: top;
+          cursor: pointer;
+        }
+        .video-contents .comment .head .align-btn * {
+          vertical-align: top;
+        }
+        .video-contents .comment .head .align-btn p {
+          display: inline-block;
+          line-height: 20px;
+        }
+        .video-contents .comment .my-comment {
+          display: grid;
+          grid-template-columns: 40px calc(100% - 58px);
+          grid-gap: 18px;
+          margin-top: 32px;
+          
 
+        }
+        .video-contents .comment .my-comment .comment-input {
+          width: 100%;
+          height: 36px;
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid rgba(255,255,255,0.1); 
+          font-size: 1rem;
+        }
+        
       `}</style>
     </Layout>
   )
