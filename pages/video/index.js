@@ -168,7 +168,7 @@ const Video = () => {
             <div className="my-comment">
               <div id="comment-left-area">
                 <img src="./profile-img.jpg" className="profile-img md" />
-              </div>              
+              </div>
               <div id="comment-right-area">
                 <input className="comment-input" value={''} placeholder={"공개 댓글 추가..."} />
               </div>
