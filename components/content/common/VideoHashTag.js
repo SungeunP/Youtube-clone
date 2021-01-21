@@ -5,7 +5,7 @@ const VideoHashTag = ({text}) => {
   return (
     <Link href={'/search'}>
       <span className="video-tag">
-        <a> {text} </a>
+        <a> #{text} </a>
 
         <style jsx>{`
           .video-tag {

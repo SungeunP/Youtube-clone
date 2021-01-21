@@ -16,7 +16,7 @@ const Comment = () => {
         <p className="comment-text"> What a world-class developer </p>
         <div className="comment-ctl">
           <button className="action-btn thumb-up-btn">
-            <ThumbUpIcon size={14} />
+            <ThumbUpIcon size='small' />
             <span className="thumb-up-count"> 113 </span>
           </button>
           <button className="action-btn thumb-down-btn">
@@ -55,8 +55,8 @@ const Comment = () => {
           vertical-align: top;
           padding: 6px 12px;
         }
-        .comment .comment-ctl .action-btn svg.MuiSvgIcon-root {
-          font-size: 1.0rem;
+        .comment .comment-ctl .action-btn svg {
+          font-size: 0.8rem;
         }
         .comment .comment-ctl .action-btn.thumb-up-btn,
         .comment .comment-ctl .action-btn.thumb-down-btn {

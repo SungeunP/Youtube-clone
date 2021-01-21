@@ -24,10 +24,12 @@ const Video = () => {
 
       <div className="yt-video">
         <div className="video-contents">
-          <video className="video-viewer" />
+          <video className="video-viewer" controls>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+          </video>
           <div className="video-infos">
             <div className="video-tags">
-              <VideoHashTag text={'#손흥민'} />
+              <VideoHashTag text={'손흥민'} />
             </div>
             <h3 className="video-title"> ※런던 현지인 반응※ 길에서 토트넘 손흥민(Son Heung-Min)을 만난다면?(ft. 월클 손흥민)ㅣ#손세이셔널 EP1 #03 </h3>
             <div className="video-meta">
