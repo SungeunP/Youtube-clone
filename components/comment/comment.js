@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 
@@ -10,10 +11,12 @@ const Comment = () => {
       </div>
       <div className="right-area">
         <div className="comment-info">
-          <p className="user-name"> 박성은 </p>
+          <Link href={'/channel'}><a href="/channel">
+            <p className="user-name"> 박성은 </p>
+          </a></Link>
           <p className="ago"> 53분 전 (수정됨) </p>
         </div>
-        <p className="comment-text"> What a world-class developer </p>
+        <p className="comment-text"> Hello world ! </p>
         <div className="comment-ctl">
           <button className="action-btn thumb-up-btn">
             <ThumbUpIcon size='small' />

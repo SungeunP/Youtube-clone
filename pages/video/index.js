@@ -13,20 +13,18 @@ import SortIcon from '@material-ui/icons/Sort';
 
 import ContentCard from '../../components/content/contentCard';
 import Comment from '../../components/comment'
+import VideoPlayer from '../../components/video/VideoPlayer';
 
 const Video = () => {
-
   return (
     <Layout sidebar={false}>
       <Head>
-        <title> Video title</title>
+        <title> Video title </title>
       </Head>
 
       <div className="yt-video">
         <div className="video-contents">
-          <video className="video-viewer" controls>
-            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-          </video>
+          <VideoPlayer />
           <div className="video-infos">
             <div className="video-tags">
               <VideoHashTag text={'손흥민'} />
@@ -65,12 +63,16 @@ const Video = () => {
           
           <div className="channel-info">
             <div id="channel-profile-img-area">
-              <img src="./profile-img.jpg" className="profile-img" />
+              <Link href={'/channel'}><a href="/channel">
+                <img src="./profile-img.jpg" className="profile-img" />
+              </a></Link>
             </div>
             <div id="channel-info-area">
               <div className="title-wrap">
                 <div>
-                  <span className="channel-name"> 이스타TV </span>
+                  <Link href={'/channel'}><a href="/channel">
+                    <span className="channel-name"> 이스타TV </span>
+                  </a></Link>
                   <p className="channel-sub-count"> 구독자 <span> 35.4만명</span></p>
                 </div>
                 <div>
@@ -179,8 +181,6 @@ const Video = () => {
               <Comment />
               <Comment />
               <Comment />
-              <Comment />
-              <Comment />
             </div>
           </div>
 
@@ -217,10 +217,6 @@ const Video = () => {
         }
         .video-contents .video-infos {
           margin-top: 12px;
-        }
-        .video-contents video.video-viewer {
-          width: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
         }
         .video-contents .video-infos .video-title {
           font-size: 18px;
