@@ -1,4 +1,10 @@
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
+import VolumeUpIcon from '@material-ui/icons/VolumeUp';
+import Crop169SharpIcon from '@material-ui/icons/Crop169Sharp';
+import FullscreenSharpIcon from '@material-ui/icons/FullscreenSharp';
+
+const iconStyle = {color: '#fff'}
 
 const VideoPlayer = (props) => {
 
@@ -14,22 +20,36 @@ const VideoPlayer = (props) => {
             <div className="video-progress">
               <div className="progress"></div>
             </div>
-            <button className="video-play-pause">
-              <PlayArrowIcon style={{color: '#fff'}} />
-            </button>
-            <button className="video-next"> next </button>
-            <button className="video-volume-btn"> next </button>
-            <div className="video-time">
-              <span className="video-current-point">0:00</span> / <span className="video-end-point">14:00</span>
-            </div>
-            {false && ( // When video support timeline
-              <div className="video-timeline">
+            <div className="controller-grid">
+              <div id="start">
+                <button className="video-play-pause">
+                  <PlayArrowIcon style={iconStyle} />
+                </button>
+                <button className="video-next">
+                  <SkipNextIcon style={iconStyle} />
+                </button>
+                <button className="video-volume-btn">
+                  <VolumeUpIcon style={iconStyle} />
+                </button>
+                <div className="video-time">
+                  <span className="video-current-point">0:00</span> / <span className="video-end-point">14:00</span>
+                </div>
+              </div>
+              <div id="middle" className="video-timeline">
                 
               </div>
-            )}
-            <button className="video-small-player"> small </button>
-            <button className="video-theater-mode"> theater </button>
-            <button className="video-full-screen">  </button>
+              <div id="end">
+                <button className="video-small-player">
+                  소형 플레이어
+                </button>
+                <button className="video-theater-mode">
+                  <Crop169SharpIcon style={iconStyle} />
+                </button>
+                <button className="video-full-screen">
+                  <FullscreenSharpIcon style={iconStyle} />
+                </button>
+              </div>
+            </div>
 
           </div>
         </div>
@@ -55,9 +75,16 @@ const VideoPlayer = (props) => {
           padding: 0px 1%;
           line-height: 40px;
           top: -44px;
+          overflow: hidden;
         }
-        .yt-video-player .video-controller > div {
+        .yt-video-player .video-controller .controller-grid {
+          display: grid;
+          height: calc(100% - 4px);
+          grid-template-columns: 200px auto 194px;
+        }
+        .yt-video-player .video-controller .controller-grid > div > * {
           display: inline-block;
+          vertical-align: top;
         }
         /* .yt-video-player .video-controller button svg {
           color: #fff !important;
@@ -82,8 +109,22 @@ const VideoPlayer = (props) => {
           height: 100%;
           background-color: #cc0000;
         }
+        .yt-video-player .video-controller .video-time {
+          font-size: 0.8rem;
+        }
         .yt-video-player .video-controller button {
-          padding: 6px 10px;
+          padding: 8px 10px 5px;
+          transition: background-color 0.2s;
+          color: #fff;
+        }
+        .yt-video-player .video-controller button:hover {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+        .yt-video-player .video-controller .video-timeline {
+          width: 30%;
+        }
+        .yt-video-player .video-controller button.video-small-player {
+          height: 100%;
         }
       `}</style>
     </>
