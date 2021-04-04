@@ -3,10 +3,16 @@ import SkipNextIcon from '@material-ui/icons/SkipNext';
 import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import Crop169SharpIcon from '@material-ui/icons/Crop169Sharp';
 import FullscreenSharpIcon from '@material-ui/icons/FullscreenSharp';
+import { connect } from 'react-redux';
+import setTestValue from '../../redux/actions/setTestValueAction'
 
 const iconStyle = {color: '#fff'}
 
 const VideoPlayer = (props) => {
+
+  const onClickSmallPlayerBtn = () => {
+    props.setTestValue('Dynamic test value')
+  }
 
   return (
     <>
@@ -39,7 +45,7 @@ const VideoPlayer = (props) => {
                 
               </div>
               <div id="end">
-                <button className="video-small-player">
+                <button className="video-small-player" onClick={onClickSmallPlayerBtn}>
                   소형 플레이어
                 </button>
                 <button className="video-theater-mode">
@@ -131,4 +137,8 @@ const VideoPlayer = (props) => {
   )
 }
 
-export default VideoPlayer
+const mapStateToProps = state => ({
+  
+})
+
+export default connect(mapStateToProps, {setTestValue})(VideoPlayer)
