@@ -4,6 +4,7 @@ import KeyboardSharpIcon from '@material-ui/icons/KeyboardSharp'
 import VideoCallIcon from '@material-ui/icons/VideoCall'
 import AppsIcon from '@material-ui/icons/Apps'
 import NotificationsIcon from '@material-ui/icons/Notifications'
+import Link from 'next/link'
 
 const Header = () => {
 
@@ -13,7 +14,9 @@ const Header = () => {
         <button className="menu-button">
           <MenuIcon />
         </button>
-        <img className="ytb-logo" src="/yt_logo_rgb_dark.png" />
+        <Link href={'/'}>
+          <img className="ytb-logo" src="/yt_logo_rgb_dark.png" />
+        </Link>
       </div>
 
       <div className="center">
@@ -65,6 +68,7 @@ const Header = () => {
         .header .left .ytb-logo {
           width: 97px;
           height: 20px;
+          cursor: pointer;
         }
 
         .header .center .search {

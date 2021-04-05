@@ -4,14 +4,19 @@ import VolumeUpIcon from '@material-ui/icons/VolumeUp';
 import Crop169SharpIcon from '@material-ui/icons/Crop169Sharp';
 import FullscreenSharpIcon from '@material-ui/icons/FullscreenSharp';
 import { connect } from 'react-redux';
-import setTestValue from '../../redux/actions/setTestValueAction'
+import setGlobalVideo from '../../redux/actions/setGlobalVideoAction'
+import Link from 'next/link'
+import { useEffect } from 'react';
 
 const iconStyle = {color: '#fff'}
 
 const VideoPlayer = (props) => {
+  const {
+    miniPlayer
+  } = props
 
-  const onClickSmallPlayerBtn = () => {
-    props.setTestValue('Dynamic test value')
+  const onClickSmallPlayerBtn = (e) => {
+    props.setGlobalVideo(true)
   }
 
   return (
@@ -45,9 +50,11 @@ const VideoPlayer = (props) => {
                 
               </div>
               <div id="end">
-                <button className="video-small-player" onClick={onClickSmallPlayerBtn}>
-                  소형 플레이어
-                </button>
+                {/* <Link href={"/"}> */}
+                  <button className="video-small-player" onClick={onClickSmallPlayerBtn}>
+                    소형 플레이어
+                  </button>
+                {/* </Link> */}
                 <button className="video-theater-mode">
                   <Crop169SharpIcon style={iconStyle} />
                 </button>
@@ -141,4 +148,4 @@ const mapStateToProps = state => ({
   
 })
 
-export default connect(mapStateToProps, {setTestValue})(VideoPlayer)
+export default connect(mapStateToProps, {setGlobalVideo})(VideoPlayer)

@@ -1,6 +1,8 @@
 import Sidebar from './sidebar'
 import Header from './header'
 import { useRouter } from 'next/router'
+import VideoPlayer from './video/VideoPlayer'
+import GlobalVideoPlayer from './video/global/GlobalVideoPlayer'
 
 const Layout = ({ children, sidebar, header }) => {
   const showHeader = header === undefined || header === true
@@ -9,7 +11,7 @@ const Layout = ({ children, sidebar, header }) => {
   const contentClassnames = `content 
     ${!showSidebar && "no-sidebar"}
   `
-
+  console.log('showSidebar :>> ', showSidebar);
   return (
     <>
     <div className="layout">
@@ -25,7 +27,10 @@ const Layout = ({ children, sidebar, header }) => {
       <div className={contentClassnames}>
         {children}
       </div>
-
+      
+      {showSidebar && (
+        <GlobalVideoPlayer />
+      )}
       
     </div>
     <style jsx>{`

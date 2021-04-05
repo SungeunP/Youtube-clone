@@ -36,6 +36,7 @@ const Video = () => {
         <Boards />
 
       </div>
+
     </Layout>
   )
 }

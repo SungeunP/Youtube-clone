@@ -1,1 +1,1 @@
-export const SET_TEST_VALUE = "SET_TEST_VALUE"
+export const SET_GLOBAL_VIDEO = "SET_GLOBAL_VIDEO"
