@@ -50,11 +50,11 @@ const VideoPlayer = (props) => {
                 
               </div>
               <div id="end">
-                {/* <Link href={"/"}> */}
+                <Link href={"/"}>
                   <button className="video-small-player" onClick={onClickSmallPlayerBtn}>
                     소형 플레이어
                   </button>
-                {/* </Link> */}
+                </Link>
                 <button className="video-theater-mode">
                   <Crop169SharpIcon style={iconStyle} />
                 </button>
