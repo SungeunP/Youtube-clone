@@ -6,7 +6,9 @@ import FullscreenSharpIcon from '@material-ui/icons/FullscreenSharp';
 import { connect } from 'react-redux';
 import setGlobalVideo from '../../redux/actions/setGlobalVideoAction'
 import Link from 'next/link'
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useRef } from 'react';
+import PauseIcon from '@material-ui/icons/Pause';
 
 const iconStyle = {color: '#fff'}
 
@@ -15,6 +17,26 @@ const VideoPlayer = (props) => {
     miniPlayer
   } = props
 
+  // Controller
+  const videoPlayerRef = useRef()
+  const [ isVideoPlaying, setIsVideoPlaying ] = useState(false)
+
+  useEffect(() => {
+    console.log('videoPlayerRef.current :>>', videoPlayerRef.current)
+    // const { controller } = videoPlayerRef.current
+    // console.log('controller :>> ', controller);
+  }, [videoPlayerRef])
+
+  const onClickVideoPlayBtn = (e) => {
+    if (!isVideoPlaying) {
+      videoPlayerRef.current.play()
+    } else {
+      videoPlayerRef.current.pause()
+    }
+
+    setIsVideoPlaying(!isVideoPlaying)
+  }
+   
   const onClickSmallPlayerBtn = (e) => {
     props.setGlobalVideo(true)
   }
@@ -22,7 +44,7 @@ const VideoPlayer = (props) => {
   return (
     <>
       <div className="yt-video-player">
-        <video className="video-viewer">
+        <video className="video-viewer" ref={videoPlayerRef}>
           <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
         </video>
     
@@ -33,9 +55,13 @@ const VideoPlayer = (props) => {
             </div>
             <div className="controller-grid">
               <div id="start">
-                <button className="video-play-pause">
-                  <PlayArrowIcon style={iconStyle} />
-                </button>
+                <button className="video-play-pause" onClick={onClickVideoPlayBtn}>{
+                  isVideoPlaying ? (
+                    <PauseIcon style={iconStyle} />
+                  ) : (
+                    <PlayArrowIcon style={iconStyle} />
+                  )
+                }</button>
                 <button className="video-next">
                   <SkipNextIcon style={iconStyle} />
                 </button>

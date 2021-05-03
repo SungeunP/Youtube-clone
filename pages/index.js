@@ -6,8 +6,23 @@ import ContentDivider from '../components/content/common/contentDivider'
 import News from '../components/content/news'
 import Layout from '../components/layout'
 import Boards from '../components/content/boards'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 const Video = () => {
+
+  useEffect(() => {
+    console.log('Get videos ..')
+    
+    fetch('/api/get/videos')
+    .then(response => {
+      console.log('Finish fetch videos >>', response)
+      const { body } = response
+      const reader = body.getReader()
+      
+    })
+  })
+
   return (
     <Layout>
       <Head>
