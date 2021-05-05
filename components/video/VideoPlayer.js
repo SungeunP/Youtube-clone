@@ -50,13 +50,8 @@ const VideoPlayer = (props) => {
   }
 
   /**
-   * Video
-   * Video frame clicked
-   * @param {*} e 
+   * Video events
    */
-  const onClickVideo = (e) => {
-    toggleVideoPlayPause()
-  }
   // On video played
   const onVideoPlay = (e) => {
     setIsVideoPlaying(true)
@@ -67,7 +62,13 @@ const VideoPlayer = (props) => {
   }
 
   /**
-   * VideoController
+   * [UI] Video
+   */
+  const onClickVideo = (e) => {
+    toggleVideoPlayPause()
+  }
+  /**
+   * [UI] VideoController
    */
   // Play/Pause button clicked
   const onClickVideoPlayBtn = (e) => {
@@ -87,13 +88,13 @@ const VideoPlayer = (props) => {
     setVideoVolume(value)
     controlVideoVolume(value)
   }
-
   // Play/Pause button clicked
   const onClickSmallPlayerBtn = (e) => {
     props.setGlobalVideo(true)
   }
 
-  // Volume controller
+
+  // Volume controller classnames
   const volumeControllerClassnames = classNames('video-volume-controller', {
     'hovered': isVolumeHover
   })
