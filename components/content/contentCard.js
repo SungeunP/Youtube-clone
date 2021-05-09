@@ -8,8 +8,18 @@ import Link from "next/link"
 /**
  * @param {String} type // ver, hor // default: ver
  */
-const ContentCard = ({type}) => {
-  
+const ContentCard = ({
+  uuid,
+  title,
+  channel,
+  channelIconSrc,
+  runtime,
+  views,
+  ago,
+  maybeLive,
+  type
+}) => {
+  console.log('uuid :>> ', uuid);
   const isHorizontal = type === 'hor'
 
   const thumbnail_classname = classnames('thumbnail', {
@@ -21,39 +31,48 @@ const ContentCard = ({type}) => {
 
   })
 
+  const thumbnailSrc = `https://i.ytimg.com/vi/${uuid}/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDKaGeh27vtvjUd5lLc-cHtPNdUog`
+
+  /**
+   * Rendering conditions
+   */
+  const isRenderMenu = isHorizontal
+
   return (
     <div className={content_card_classname}>
 
       <div className={thumbnail_classname}>
         <Link href={'/video'}>
-          <a><img className="video-thumbnail" src="./test_thumbnail.png" /></a>
+          <a><img className="video-thumbnail" src={thumbnailSrc} /></a>
         </Link>
-        <ul className="video-menu">
-          <li>
-            <button className="video-opt-btn">
-              <WatchLaterIcon style={{fontSize: 22}} />
-            </button>
-          </li>
-          <li>
-            <button className="video-opt-btn">
-              <PlaylistPlayIcon />
-            </button>
-          </li>
-        </ul>
+        {isRenderMenu && (
+          <ul className="video-menu">
+            <li>
+              <button className="video-opt-btn">
+                <WatchLaterIcon style={{fontSize: 22}} />
+              </button>
+            </li>
+            <li>
+              <button className="video-opt-btn">
+                <PlaylistPlayIcon />
+              </button>
+            </li>
+          </ul>
+        )}
       </div>
 
       <div className="info">
         <Link href={'/channel'}>
-          <a className="video-profile-img"> <img src="./profile-img.jpg" /> </a> 
+          <a className="video-profile-img"> <img src={channelIconSrc} /> </a> 
         </Link>
         <div className="text">
           <Link href={'/video'}>
-            <a className="video-title"> INTERVIEW | JOSE MOURINHO ON CHELSEA DRAW | Tottenham Tottenham Tottenham Tottenham </a>
+            <a className="video-title"> {title} </a>
           </Link> 
           <Link href={'/channel'}>
-            <a className="video-channel"> Tottenham Hotspur </a>
+            <a className="video-channel"> {channel} </a>
           </Link>
-          <p className="video-views"> 조회수 8.5만회 </p>
+          <p className="video-views"> 조회수 {views} </p>
         </div>
         <div className="menu">
           
@@ -66,6 +85,7 @@ const ContentCard = ({type}) => {
           display: inline-block;
           width: calc(25% - 18px);
           margin: 0px 9px 36px;
+          vertical-align: top;
         }
         .content-card.horizontal {
           width: 100%;

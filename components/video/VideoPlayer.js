@@ -191,6 +191,9 @@ const VideoPlayer = (props) => {
           display: inline-block;
           vertical-align: top;
         }
+        .yt-video-player .video-controller .controller-grid #end {
+          text-align: right;
+        }
         /* .yt-video-player .video-controller button svg {
           color: #fff !important;
           fill: #fff !important;
@@ -229,7 +232,6 @@ const VideoPlayer = (props) => {
           left: 44px;
           width: 0px;
           opacity: 0;
-          margin-left: 4px;
           transition: width 0.6s, opacity 0.4s;
         }
         .yt-video-player .video-controller .video-volume-controller.hovered .video-volume-slider {

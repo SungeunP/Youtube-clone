@@ -8,19 +8,23 @@ import Layout from '../components/layout'
 import Boards from '../components/content/boards'
 import { useEffect } from 'react'
 import { useState } from 'react'
+import FeedRenderer from '../components/content/feedRenderer'
 
 const Video = () => {
 
+  const [ videos, setVideos ] = useState(undefined)
+
   useEffect(() => {
-    console.log('Get videos ..')
-    
-    fetch('/api/get/videos')
-    .then(response => {
-      console.log('Finish fetch videos >>', response)
-      const { body } = response
-      const reader = body.getReader()
-      
-    })
+    console.log('Fetching videos ..')
+    if (videos === undefined) {
+      fetch('/api/get/videos')
+      .then(response => { return response.json()})
+      .then(res => {
+        const { videos:_videos } = res
+        setVideos(_videos)
+        console.log('_videos :>> ', _videos)
+      })
+    }
   })
 
   return (
@@ -32,23 +36,25 @@ const Video = () => {
       
       <div className="contents">
 
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
+        <FeedRenderer contents={videos} />
 
-        <News />
+        {/* <ContentCard />
+        <ContentCard />
+        <ContentCard />
+        <ContentCard />
+        <ContentCard />
+        <ContentCard />
+        <ContentCard />
+        <ContentCard /> */}
+
+        {/* <News /> */}
         
+        {/* <ContentCard />
         <ContentCard />
         <ContentCard />
-        <ContentCard />
-        <ContentCard />
+        <ContentCard /> */}
 
-        <Boards />
+        {/* <Boards /> */}
 
       </div>
 
