@@ -6,44 +6,54 @@ import PlaylistPlayIcon from '@material-ui/icons/PlaylistPlay';
 import Link from "next/link"
 
 /**
- * @param {String} type // ver, hor // default: ver
+ * @param {String} type // ver, hor, tiny // default: ver
+ * ver: Normal vertical view
+ * hor: Normal horizontal view
+ * tiny: Video card in global video player, Rendered as tiny size
  */
 const ContentCard = ({
   uuid,
-  title,
-  channel,
+  title = 'Youtube Video',
+  channel = 'Youtube',
   channelIconSrc,
-  runtime,
-  views,
-  ago,
+  runtime = '1:00',
+  views = '1M views',
+  ago = '1일 전',
   maybeLive,
   type
 }) => {
-  console.log('uuid :>> ', uuid);
-  const isHorizontal = type === 'hor'
-
-  const thumbnail_classname = classnames('thumbnail', {
-    'horizontal': isHorizontal
-  })
-
-  const content_card_classname = classnames('content-card', {
-    'horizontal': isHorizontal
-
-  })
+  const isHorizontal = type === 'hor' || type === 'tiny'
+  const isTiny = type === 'tiny'
 
   const thumbnailSrc = `https://i.ytimg.com/vi/${uuid}/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDKaGeh27vtvjUd5lLc-cHtPNdUog`
 
   /**
    * Rendering conditions
    */
-  const isRenderMenu = isHorizontal
+  const isRenderMenu = isHorizontal && !isTiny
+  const renderingConditionViews = !isTiny
+
+  /**
+   * Classnames
+   */
+  const thumbnail_classname = classnames('thumbnail', {
+    'horizontal': isHorizontal,
+    'tiny': isTiny,
+  })
+  const video_thumbnail_classname = classnames('video-thumbnail', {
+    'tiny': isTiny,
+  })
+
+  const content_card_classname = classnames('content-card', {
+    'horizontal': isHorizontal
+  })
 
   return (
     <div className={content_card_classname}>
 
       <div className={thumbnail_classname}>
         <Link href={'/video'}>
-          <a><img className="video-thumbnail" src={thumbnailSrc} /></a>
+          <a><img className={video_thumbnail_classname} src={thumbnailSrc} /></a>
         </Link>
         {isRenderMenu && (
           <ul className="video-menu">
@@ -72,7 +82,9 @@ const ContentCard = ({
           <Link href={'/channel'}>
             <a className="video-channel"> {channel} </a>
           </Link>
-          <p className="video-views"> 조회수 {views} </p>
+          {renderingConditionViews && (
+            <p className="video-views"> 조회수 {views} </p>
+          )}
         </div>
         <div className="menu">
           
@@ -99,12 +111,20 @@ const ContentCard = ({
           position: relative;
           width: 170px;
         }
+        .content-card.horizontal .thumbnail.tiny {
+          width: 100px;
+          height: 56px;
+        }
 
         .content-card .thumbnail .video-thumbnail {
           position: relative;
           width: 100%;
           margin-bottom: 8px;
         }
+        .content-card .thumbnail .video-thumbnail.tiny {
+          height: 56px;
+        }
+
         .content-card .thumbnail .video-menu {
           position: absolute;
           top: 88px; /* 82px */

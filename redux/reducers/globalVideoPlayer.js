@@ -1,9 +1,9 @@
 import { SET_GLOBAL_VIDEO } from "../types";
 
-// let initialState = {
-//   globalVideo: null
-// }
-export default (state = false, action) => {
+let initialState = {
+  globalVideo: null
+}
+export default (state = initialState, action) => {
   console.log('state :>> ', state);
   console.log('action :>> ', action);
   console.log('SET_GLOBAL_VIDEO :>> ', SET_GLOBAL_VIDEO);
