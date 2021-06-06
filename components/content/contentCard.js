@@ -48,11 +48,19 @@ const ContentCard = ({
     'horizontal': isHorizontal
   })
 
+  /**
+   * Link hrefs
+   */
+  const videoHref = {
+    pathname: '/video',
+    query: { id: uuid }
+  }
+
   return (
     <div className={content_card_classname}>
 
       <div className={thumbnail_classname}>
-        <Link href={'/video'}>
+        <Link href={videoHref}>
           <a><img className={video_thumbnail_classname} src={thumbnailSrc} /></a>
         </Link>
         {isRenderMenu && (
@@ -76,7 +84,7 @@ const ContentCard = ({
           <a className="video-profile-img"> <img src={channelIconSrc} /> </a> 
         </Link>
         <div className="text">
-          <Link href={'/video'}>
+          <Link href={videoHref}>
             <a className="video-title"> {title} </a>
           </Link> 
           <Link href={'/channel'}>

@@ -15,14 +15,12 @@ const Video = () => {
   const [ videos, setVideos ] = useState(undefined)
 
   useEffect(() => {
-    console.log('Fetching videos ..')
     if (videos === undefined) {
       fetch('/api/get/videos')
       .then(response => { return response.json()})
       .then(res => {
         const { videos:_videos } = res
         setVideos(_videos)
-        console.log('_videos :>> ', _videos)
       })
     }
   })
