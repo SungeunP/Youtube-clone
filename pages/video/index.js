@@ -14,6 +14,7 @@ import SortIcon from '@material-ui/icons/Sort';
 import ContentCard from '../../components/content/contentCard';
 import Comment from '../../components/comment'
 import VideoPlayer from '../../components/video/VideoPlayer';
+import {RecommendedVideos} from 'components/RecommendedVideos/RecommendedVideos';
 
 const Video = () => {
   return (
@@ -186,6 +187,8 @@ const Video = () => {
 
         </div>
         <div className="recommend-videos">
+          <RecommendedVideos />
+          {/* <ContentCard type="hor" />
           <ContentCard type="hor" />
           <ContentCard type="hor" />
           <ContentCard type="hor" />
@@ -200,8 +203,7 @@ const Video = () => {
           <ContentCard type="hor" />
           <ContentCard type="hor" />
           <ContentCard type="hor" />
-          <ContentCard type="hor" />
-          <ContentCard type="hor" />
+          <ContentCard type="hor" /> */}
         </div>
       </div>
 

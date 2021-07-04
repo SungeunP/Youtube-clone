@@ -189,6 +189,7 @@ const ContentCard = ({
           font-size: 0.9rem;
           display: -webkit-box;
           overflow: hidden;
+          word-break: break-all;
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 2;
         }

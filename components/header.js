@@ -15,7 +15,7 @@ const Header = () => {
           <MenuIcon />
         </button>
         <Link href={'/'}>
-          <img className="ytb-logo" src="/yt_logo_rgb_dark.png" />
+          <a><img className="ytb-logo" src="/yt_logo_rgb_dark.png" /></a>
         </Link>
       </div>
 
