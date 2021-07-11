@@ -10,13 +10,14 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import FeedRenderer from '../components/content/feedRenderer'
 
+const REQUEST_MAX_VIDEOS_COUNT = 30
 const Video = () => {
 
   const [ videos, setVideos ] = useState(undefined)
 
   useEffect(() => {
     if (videos === undefined) {
-      fetch('/api/get/videos')
+      fetch(`/api/get/recommended?max=${REQUEST_MAX_VIDEOS_COUNT}`)
       .then(response => { return response.json()})
       .then(res => {
         const { videos:_videos } = res

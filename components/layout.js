@@ -45,7 +45,7 @@ const Layout = ({ children, sidebar, header }) => {
         background-color: #181818;
         width: calc(100% - 240px);
         height: calc(100% - 56px);
-        padding: 26px 20px;
+        padding: 24px;
         overflow-y: auto;
         vertical-align: top;
       }
